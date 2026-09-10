@@ -1,4 +1,4 @@
-(.venv) C:\Users\admin\Desktop\Medium.Com\M1\Zero-Inflated Poisson Distribution (ZIP)\zero-inflated-poisson>python scripts\run_all.py
+(.venv) C:\zero-inflated-poisson>python scripts\run_all.py
 
 === Running scripts\01_classroom_zero_gap.py ===
 n = 100
@@ -14,7 +14,6 @@ count | observed | poisson-expected
 
 Zero gap: observed 72 vs. expected 54.9  -> +17.1 students (17 percentage points)
 
-Saved plot to C:\Users\admin\Desktop\Medium.Com\M1\Zero-Inflated Poisson Distribution (ZIP)\zero-inflated-poisson\figures\classroom_zero_gap.png
 
 === Running scripts\02_zip_simulation.py ===
 ============================================================
@@ -36,9 +35,6 @@ structural-zero process. On real data, a gap like this is a
 signal worth investigating, not automatic confirmation of
 structural zeros — see Part 2 for how far the evidence can
 honestly be pushed.
-
-Saved plot to C:\Users\admin\Desktop\Medium.Com\M1\Zero-Inflated Poisson Distribution (ZIP)\zero-inflated-poisson\figures\zip_histogram.png
-Saved simulated data to C:\Users\admin\Desktop\Medium.Com\M1\Zero-Inflated Poisson Distribution (ZIP)\zero-inflated-poisson\outputs\data\zip_simulated_y.csv
 
 === Running scripts\03_zip_model_comparison.py ===
 ======================================================================
@@ -72,5 +68,3 @@ any given real-world dataset has a structural-zero process — that
 still has to be argued from domain knowledge.
 
 All scripts completed successfully.
-
-(.venv) C:\Users\admin\Desktop\Medium.Com\M1\Zero-Inflated Poisson Distribution (ZIP)\zero-inflated-poisson>
