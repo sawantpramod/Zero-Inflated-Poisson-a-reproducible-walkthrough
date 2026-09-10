@@ -1,0 +1,76 @@
+(.venv) C:\Users\admin\Desktop\Medium.Com\M1\Zero-Inflated Poisson Distribution (ZIP)\zero-inflated-poisson>python scripts\run_all.py
+
+=== Running scripts\01_classroom_zero_gap.py ===
+n = 100
+lambda_hat = 0.60
+
+count | observed | poisson-expected
+    0 |       72 |            54.9
+    1 |       12 |            32.9
+    2 |        7 |             9.9
+    3 |        4 |             2.0
+    4 |        3 |             0.3
+    5 |        2 |             0.0
+
+Zero gap: observed 72 vs. expected 54.9  -> +17.1 students (17 percentage points)
+
+Saved plot to C:\Users\admin\Desktop\Medium.Com\M1\Zero-Inflated Poisson Distribution (ZIP)\zero-inflated-poisson\figures\classroom_zero_gap.png
+
+=== Running scripts\02_zip_simulation.py ===
+============================================================
+ZIP SIMULATION — SUMMARY
+============================================================
+Random seed:                            42
+n:                                      1000
+True pi (structural-zero probability):  0.6
+True lambda (Poisson rate):             1.5
+------------------------------------------------------------
+Sample mean of y (lambda_hat):          0.586
+Observed zero percentage:               70.2%
+Naive Poisson expected zero percentage: 55.7%
+Gap (observed - naive Poisson):         14.5 pts
+============================================================
+Interpretation (only valid because we simulated this data):
+The gap above exists because we deliberately mixed in a
+structural-zero process. On real data, a gap like this is a
+signal worth investigating, not automatic confirmation of
+structural zeros — see Part 2 for how far the evidence can
+honestly be pushed.
+
+Saved plot to C:\Users\admin\Desktop\Medium.Com\M1\Zero-Inflated Poisson Distribution (ZIP)\zero-inflated-poisson\figures\zip_histogram.png
+Saved simulated data to C:\Users\admin\Desktop\Medium.Com\M1\Zero-Inflated Poisson Distribution (ZIP)\zero-inflated-poisson\outputs\data\zip_simulated_y.csv
+
+=== Running scripts\03_zip_model_comparison.py ===
+======================================================================
+MODEL COMPARISON — Poisson vs. ZIP vs. Negative Binomial
+======================================================================
+            Model  Log-Likelihood     AIC     BIC  Params
+          Poisson        -1166.13 2334.26 2339.17       1
+              ZIP        -1010.10 2024.20 2034.01       2
+Negative Binomial        -1021.89 2047.77 2057.59       2
+----------------------------------------------------------------------
+Lowest AIC: ZIP   |   Lowest BIC: ZIP
+
+How to read this (deliberately cautious phrasing):
+'ZIP is better supported by AIC on this sample' — not
+'proven correct.' AIC/BIC compare relative fit under stated
+assumptions; they don't verify that a structural-zero mechanism
+actually exists. That case has to be made on domain grounds
+(is there a real reason some units could never generate a
+positive count?), with the model comparison as supporting,
+not sole, evidence.
+
+======================================================================
+ZIP recovered parameters vs. true simulation values
+======================================================================
+True pi = 0.60      |  ZIP-estimated pi ≈ 0.622
+True lambda = 1.50  |  ZIP-estimated lambda ≈ 1.548
+
+This recovery check is a sanity check on the METHOD (does ZIP
+estimation get back the parameters we put in?), not evidence that
+any given real-world dataset has a structural-zero process — that
+still has to be argued from domain knowledge.
+
+All scripts completed successfully.
+
+(.venv) C:\Users\admin\Desktop\Medium.Com\M1\Zero-Inflated Poisson Distribution (ZIP)\zero-inflated-poisson>
